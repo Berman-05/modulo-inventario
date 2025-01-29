@@ -39,5 +39,10 @@ namespace modulo_inventario
         {
             ChangeMenu(new Inicio());
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            ChangeMenu(new Compras());
+        }
     }
 }
