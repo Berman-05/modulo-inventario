@@ -120,5 +120,15 @@ namespace modulo_inventario
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInicio_Click_1(object sender, EventArgs e)
+        {
+            ChangeMenu(new Menú());
+        }
     }
 }

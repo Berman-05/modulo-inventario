@@ -30,10 +30,9 @@
         {
             panel1 = new Panel();
             dgvInventario = new DataGridView();
-            LblTitulo = new Label();
             txtBusqueda = new TextBox();
             panel2 = new Panel();
-            btnSalir = new Button();
+            LblTitulo = new Label();
             btnInicio = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvInventario).BeginInit();
@@ -65,16 +64,6 @@
             dgvInventario.TabIndex = 39;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
-            // LblTitulo
-            // 
-            LblTitulo.AutoSize = true;
-            LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblTitulo.Location = new Point(245, 9);
-            LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(230, 23);
-            LblTitulo.TabIndex = 36;
-            LblTitulo.Text = "Inventario de productos";
-            // 
             // txtBusqueda
             // 
             txtBusqueda.BackColor = Color.FromArgb(255, 255, 128);
@@ -91,7 +80,6 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(60, 100, 220);
-            panel2.Controls.Add(btnSalir);
             panel2.Controls.Add(LblTitulo);
             panel2.Controls.Add(btnInicio);
             panel2.Dock = DockStyle.Top;
@@ -100,19 +88,15 @@
             panel2.Size = new Size(727, 45);
             panel2.TabIndex = 29;
             // 
-            // btnSalir
+            // LblTitulo
             // 
-            btnSalir.Dock = DockStyle.Right;
-            btnSalir.FlatAppearance.BorderSize = 0;
-            btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(644, 0);
-            btnSalir.Margin = new Padding(3, 2, 3, 2);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(83, 45);
-            btnSalir.TabIndex = 6;
-            btnSalir.Text = "Salir";
-            btnSalir.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSalir.UseVisualStyleBackColor = true;
+            LblTitulo.AutoSize = true;
+            LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblTitulo.Location = new Point(245, 9);
+            LblTitulo.Name = "LblTitulo";
+            LblTitulo.Size = new Size(230, 23);
+            LblTitulo.TabIndex = 36;
+            LblTitulo.Text = "Inventario de productos";
             // 
             // btnInicio
             // 
@@ -154,7 +138,6 @@
         private Label LblTitulo;
         private TextBox txtBusqueda;
         private Panel panel2;
-        private Button btnSalir;
         private Button btnInicio;
     }
 }
