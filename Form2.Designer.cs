@@ -29,45 +29,115 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
+            dgvInventario = new DataGridView();
+            txtBusqueda = new TextBox();
+            panel2 = new Panel();
+            LblTitulo = new Label();
+            btnInicio = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInventario).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(dgvInventario);
+            panel1.Controls.Add(txtBusqueda);
+            panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 350);
+            panel1.Size = new Size(727, 450);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
-            // button1
+            // dgvInventario
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Regresar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            dgvInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvInventario.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInventario.Location = new Point(68, 155);
+            dgvInventario.Name = "dgvInventario";
+            dgvInventario.Size = new Size(609, 162);
+            dgvInventario.TabIndex = 39;
+            dgvInventario.CellContentClick += dgvInventario_CellContentClick;
+            // 
+            // txtBusqueda
+            // 
+            txtBusqueda.BackColor = Color.FromArgb(255, 255, 128);
+            txtBusqueda.BorderStyle = BorderStyle.FixedSingle;
+            txtBusqueda.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBusqueda.Location = new Point(105, 82);
+            txtBusqueda.Multiline = true;
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.PlaceholderText = "Buscar...";
+            txtBusqueda.Size = new Size(527, 34);
+            txtBusqueda.TabIndex = 30;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(60, 100, 220);
+            panel2.Controls.Add(LblTitulo);
+            panel2.Controls.Add(btnInicio);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(727, 45);
+            panel2.TabIndex = 29;
+            // 
+            // LblTitulo
+            // 
+            LblTitulo.AutoSize = true;
+            LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblTitulo.Location = new Point(245, 9);
+            LblTitulo.Name = "LblTitulo";
+            LblTitulo.Size = new Size(230, 23);
+            LblTitulo.TabIndex = 36;
+            LblTitulo.Text = "Inventario de productos";
+            // 
+            // btnInicio
+            // 
+            btnInicio.Dock = DockStyle.Left;
+            btnInicio.FlatAppearance.BorderSize = 0;
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Location = new Point(0, 0);
+            btnInicio.Margin = new Padding(3, 2, 3, 2);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(83, 45);
+            btnInicio.TabIndex = 5;
+            btnInicio.Text = "Inicio";
+            btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 350);
+            ClientSize = new Size(727, 450);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form2";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Button button1;
+        private DataGridView dgvInventario;
+        private Label LblTitulo;
+        private TextBox txtBusqueda;
+        private Panel panel2;
+        private Button btnInicio;
     }
 }

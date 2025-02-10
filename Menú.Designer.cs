@@ -29,70 +29,97 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            Inventario = new Button();
-            button1 = new Button();
+            btnVentas = new Button();
+            btnRH = new Button();
+            btnCompras = new Button();
+            btnInventario = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(Inventario);
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnVentas);
+            panel1.Controls.Add(btnRH);
+            panel1.Controls.Add(btnCompras);
+            panel1.Controls.Add(btnInventario);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 350);
+            panel1.Size = new Size(750, 262);
             panel1.TabIndex = 0;
             // 
-            // button3
+            // btnVentas
             // 
-            button3.Location = new Point(304, 128);
-            button3.Name = "button3";
-            button3.Size = new Size(186, 61);
-            button3.TabIndex = 2;
-            button3.Text = "Ventas";
-            button3.UseVisualStyleBackColor = true;
+            btnVentas.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnVentas.BackColor = Color.Gold;
+            btnVentas.FlatStyle = FlatStyle.Flat;
+            btnVentas.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnVentas.Location = new Point(566, 104);
+            btnVentas.Margin = new Padding(15);
+            btnVentas.Name = "btnVentas";
+            btnVentas.Size = new Size(125, 125);
+            btnVentas.TabIndex = 4;
+            btnVentas.Text = "Ventas";
+            btnVentas.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnVentas.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnRH
             // 
-            button2.Location = new Point(509, 128);
-            button2.Name = "button2";
-            button2.Size = new Size(186, 61);
-            button2.TabIndex = 1;
-            button2.Text = "Recursos humanos";
-            button2.UseVisualStyleBackColor = true;
+            btnRH.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnRH.BackColor = Color.Gold;
+            btnRH.FlatStyle = FlatStyle.Flat;
+            btnRH.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnRH.Location = new Point(411, 104);
+            btnRH.Margin = new Padding(15);
+            btnRH.Name = "btnRH";
+            btnRH.Size = new Size(125, 125);
+            btnRH.TabIndex = 2;
+            btnRH.Text = "Recursos Humanos";
+            btnRH.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnRH.UseVisualStyleBackColor = false;
             // 
-            // Inventario
+            // btnCompras
             // 
-            Inventario.Location = new Point(100, 128);
-            Inventario.Name = "Inventario";
-            Inventario.Size = new Size(186, 61);
-            Inventario.TabIndex = 0;
-            Inventario.Text = "Inventario";
-            Inventario.UseVisualStyleBackColor = true;
-            Inventario.Click += Inventario_Click;
+            btnCompras.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCompras.BackColor = Color.Gold;
+            btnCompras.FlatStyle = FlatStyle.Flat;
+            btnCompras.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnCompras.Location = new Point(257, 104);
+            btnCompras.Margin = new Padding(15);
+            btnCompras.Name = "btnCompras";
+            btnCompras.Size = new Size(125, 125);
+            btnCompras.TabIndex = 1;
+            btnCompras.Text = "Compras";
+            btnCompras.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnCompras.UseVisualStyleBackColor = false;
+            btnCompras.Click += btnCompras_Click;
             // 
-            // button1
+            // btnInventario
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Regresar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnInventario.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnInventario.BackColor = Color.Gold;
+            btnInventario.FlatStyle = FlatStyle.Flat;
+            btnInventario.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnInventario.Location = new Point(102, 104);
+            btnInventario.Margin = new Padding(15);
+            btnInventario.Name = "btnInventario";
+            btnInventario.Size = new Size(125, 125);
+            btnInventario.TabIndex = 0;
+            btnInventario.Text = "Inventario";
+            btnInventario.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnInventario.UseVisualStyleBackColor = false;
+            btnInventario.Click += Inventario_Click;
             // 
             // Menú
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 350);
+            ClientSize = new Size(750, 262);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Menú";
             Text = "Menú";
             panel1.ResumeLayout(false);
@@ -102,9 +129,9 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
-        private Button Inventario;
-        private Button button3;
-        private Button button1;
+        private Button btnCompras;
+        private Button btnInventario;
+        private Button btnRH;
+        private Button btnVentas;
     }
 }
