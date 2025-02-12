@@ -33,7 +33,7 @@ namespace modulo_inventario
         private void button1_Click(object sender, EventArgs e)
         {
             string user = userBox.Text;
-            string password = passwordBox.Text;
+            string password = textBox1.Text;
             if (user == "Usuario1" && password == "123")
             {
                 MessageBox.Show("Sesión iniciada     .");
@@ -43,6 +43,21 @@ namespace modulo_inventario
             {
                 MessageBox.Show("Credenciales incorrectas");
             }
+        }
+
+        private void pContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passwordBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
