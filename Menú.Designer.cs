@@ -45,9 +45,8 @@
             panel1.Controls.Add(btnInventario);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(750, 262);
+            panel1.Size = new Size(857, 349);
             panel1.TabIndex = 0;
             // 
             // btnVentas
@@ -56,14 +55,15 @@
             btnVentas.BackColor = Color.Gold;
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            btnVentas.Location = new Point(566, 104);
-            btnVentas.Margin = new Padding(15);
+            btnVentas.Location = new Point(647, 139);
+            btnVentas.Margin = new Padding(17, 20, 17, 20);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(125, 125);
+            btnVentas.Size = new Size(143, 167);
             btnVentas.TabIndex = 4;
             btnVentas.Text = "Ventas";
             btnVentas.TextImageRelation = TextImageRelation.ImageAboveText;
             btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnRH
             // 
@@ -71,10 +71,10 @@
             btnRH.BackColor = Color.Gold;
             btnRH.FlatStyle = FlatStyle.Flat;
             btnRH.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            btnRH.Location = new Point(411, 104);
-            btnRH.Margin = new Padding(15);
+            btnRH.Location = new Point(470, 139);
+            btnRH.Margin = new Padding(17, 20, 17, 20);
             btnRH.Name = "btnRH";
-            btnRH.Size = new Size(125, 125);
+            btnRH.Size = new Size(143, 167);
             btnRH.TabIndex = 2;
             btnRH.Text = "Recursos Humanos";
             btnRH.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -86,10 +86,10 @@
             btnCompras.BackColor = Color.Gold;
             btnCompras.FlatStyle = FlatStyle.Flat;
             btnCompras.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            btnCompras.Location = new Point(257, 104);
-            btnCompras.Margin = new Padding(15);
+            btnCompras.Location = new Point(294, 139);
+            btnCompras.Margin = new Padding(17, 20, 17, 20);
             btnCompras.Name = "btnCompras";
-            btnCompras.Size = new Size(125, 125);
+            btnCompras.Size = new Size(143, 167);
             btnCompras.TabIndex = 1;
             btnCompras.Text = "Compras";
             btnCompras.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -102,10 +102,10 @@
             btnInventario.BackColor = Color.Gold;
             btnInventario.FlatStyle = FlatStyle.Flat;
             btnInventario.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            btnInventario.Location = new Point(102, 104);
-            btnInventario.Margin = new Padding(15);
+            btnInventario.Location = new Point(117, 139);
+            btnInventario.Margin = new Padding(17, 20, 17, 20);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(125, 125);
+            btnInventario.Size = new Size(143, 167);
             btnInventario.TabIndex = 0;
             btnInventario.Text = "Inventario";
             btnInventario.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -114,12 +114,11 @@
             // 
             // Menú
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(750, 262);
+            ClientSize = new Size(857, 349);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Menú";
             Text = "Menú";
             panel1.ResumeLayout(false);

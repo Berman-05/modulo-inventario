@@ -47,20 +47,21 @@
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(769, 432);
+            panel1.Size = new Size(879, 576);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // dgvInventario
             // 
-            dgvInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvInventario.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInventario.Location = new Point(68, 155);
+            dgvInventario.Location = new Point(78, 207);
+            dgvInventario.Margin = new Padding(3, 4, 3, 4);
             dgvInventario.Name = "dgvInventario";
-            dgvInventario.Size = new Size(609, 162);
+            dgvInventario.RowHeadersWidth = 51;
+            dgvInventario.Size = new Size(696, 216);
             dgvInventario.TabIndex = 39;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
@@ -69,11 +70,12 @@
             txtBusqueda.BackColor = Color.FromArgb(255, 255, 128);
             txtBusqueda.BorderStyle = BorderStyle.FixedSingle;
             txtBusqueda.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBusqueda.Location = new Point(105, 82);
+            txtBusqueda.Location = new Point(120, 109);
+            txtBusqueda.Margin = new Padding(3, 4, 3, 4);
             txtBusqueda.Multiline = true;
             txtBusqueda.Name = "txtBusqueda";
             txtBusqueda.PlaceholderText = "Buscar...";
-            txtBusqueda.Size = new Size(527, 34);
+            txtBusqueda.Size = new Size(602, 45);
             txtBusqueda.TabIndex = 30;
             txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
@@ -84,17 +86,18 @@
             panel2.Controls.Add(btnInicio);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(769, 45);
+            panel2.Size = new Size(879, 60);
             panel2.TabIndex = 29;
             // 
             // LblTitulo
             // 
             LblTitulo.AutoSize = true;
             LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblTitulo.Location = new Point(245, 9);
+            LblTitulo.Location = new Point(280, 12);
             LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(230, 23);
+            LblTitulo.Size = new Size(279, 27);
             LblTitulo.TabIndex = 36;
             LblTitulo.Text = "Inventario de productos";
             // 
@@ -105,9 +108,8 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.Location = new Point(0, 0);
-            btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(57, 45);
+            btnInicio.Size = new Size(65, 60);
             btnInicio.TabIndex = 5;
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -116,12 +118,11 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(769, 432);
+            ClientSize = new Size(879, 576);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
