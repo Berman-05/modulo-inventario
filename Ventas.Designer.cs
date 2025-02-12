@@ -1,6 +1,6 @@
 ﻿namespace modulo_inventario
 {
-    partial class Compras
+    partial class Ventas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
             btnComprar = new Button();
             dgvProductos = new DataGridView();
-            cbProveedores = new ComboBox();
             nudCantidad = new NumericUpDown();
-            lblPrecio = new Label();
-            txtPrecio = new TextBox();
             LblCantidad = new Label();
-            LblProveedor = new Label();
             LblNombre = new Label();
-            txtNombre = new TextBox();
             panel2 = new Panel();
             btnInicio = new Button();
             LblTitulo = new Label();
@@ -50,22 +46,28 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(btnComprar);
             panel1.Controls.Add(dgvProductos);
-            panel1.Controls.Add(cbProveedores);
             panel1.Controls.Add(nudCantidad);
-            panel1.Controls.Add(lblPrecio);
-            panel1.Controls.Add(txtPrecio);
             panel1.Controls.Add(LblCantidad);
-            panel1.Controls.Add(LblProveedor);
             panel1.Controls.Add(LblNombre);
-            panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(769, 432);
             panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Pollo Rey", "Pierna de pollo", "Medallones", "Alas de pollo", "Toledo", "Xelac" });
+            comboBox1.Location = new Point(184, 100);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(234, 25);
+            comboBox1.TabIndex = 51;
             // 
             // btnComprar
             // 
@@ -74,11 +76,11 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = FlatStyle.Flat;
             btnComprar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnComprar.Location = new Point(632, 97);
+            btnComprar.Location = new Point(36, 166);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new Size(72, 56);
-            btnComprar.TabIndex = 39;
-            btnComprar.Text = "Comprar";
+            btnComprar.Size = new Size(693, 26);
+            btnComprar.TabIndex = 50;
+            btnComprar.Text = "Ventas";
             btnComprar.UseVisualStyleBackColor = false;
             btnComprar.Click += btnComprar_Click;
             // 
@@ -87,86 +89,38 @@
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(72, 187);
+            dgvProductos.Location = new Point(36, 198);
             dgvProductos.Name = "dgvProductos";
-            dgvProductos.Size = new Size(609, 154);
-            dgvProductos.TabIndex = 38;
-            // 
-            // cbProveedores
-            // 
-            cbProveedores.FormattingEnabled = true;
-            cbProveedores.Items.AddRange(new object[] { "Pollo Rey", "Toledo", "Xelac" });
-            cbProveedores.Location = new Point(452, 96);
-            cbProveedores.Name = "cbProveedores";
-            cbProveedores.Size = new Size(165, 23);
-            cbProveedores.TabIndex = 37;
+            dgvProductos.Size = new Size(693, 154);
+            dgvProductos.TabIndex = 49;
+            dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(178, 129);
+            nudCantidad.Location = new Point(513, 102);
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(87, 23);
-            nudCantidad.TabIndex = 36;
-            // 
-            // lblPrecio
-            // 
-            lblPrecio.AutoSize = true;
-            lblPrecio.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(351, 129);
-            lblPrecio.Margin = new Padding(3);
-            lblPrecio.Name = "lblPrecio";
-            lblPrecio.Size = new Size(95, 17);
-            lblPrecio.TabIndex = 35;
-            lblPrecio.Text = "Precio Unitario";
-            // 
-            // txtPrecio
-            // 
-            txtPrecio.BackColor = Color.White;
-            txtPrecio.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPrecio.Location = new Point(452, 129);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(164, 22);
-            txtPrecio.TabIndex = 33;
+            nudCantidad.Size = new Size(216, 23);
+            nudCantidad.TabIndex = 47;
             // 
             // LblCantidad
             // 
             LblCantidad.AutoSize = true;
             LblCantidad.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblCantidad.Location = new Point(108, 130);
+            LblCantidad.Location = new Point(443, 103);
             LblCantidad.Name = "LblCantidad";
             LblCantidad.Size = new Size(64, 17);
-            LblCantidad.TabIndex = 34;
+            LblCantidad.TabIndex = 45;
             LblCantidad.Text = "Cantidad";
-            // 
-            // LblProveedor
-            // 
-            LblProveedor.AutoSize = true;
-            LblProveedor.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblProveedor.Location = new Point(375, 96);
-            LblProveedor.Margin = new Padding(3);
-            LblProveedor.Name = "LblProveedor";
-            LblProveedor.Size = new Size(71, 17);
-            LblProveedor.TabIndex = 32;
-            LblProveedor.Text = "Proveedor";
             // 
             // LblNombre
             // 
             LblNombre.AutoSize = true;
             LblNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblNombre.Location = new Point(36, 96);
+            LblNombre.Location = new Point(42, 104);
             LblNombre.Name = "LblNombre";
             LblNombre.Size = new Size(137, 17);
-            LblNombre.TabIndex = 31;
+            LblNombre.TabIndex = 42;
             LblNombre.Text = "Nombre del producto";
-            // 
-            // txtNombre
-            // 
-            txtNombre.BackColor = Color.White;
-            txtNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(178, 95);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(164, 22);
-            txtNombre.TabIndex = 30;
             // 
             // panel2
             // 
@@ -178,7 +132,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(769, 45);
-            panel2.TabIndex = 29;
+            panel2.TabIndex = 40;
             // 
             // btnInicio
             // 
@@ -194,7 +148,6 @@
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInicio.UseVisualStyleBackColor = true;
-            btnInicio.Click += btnInicio_Click_1;
             // 
             // LblTitulo
             // 
@@ -202,21 +155,21 @@
             LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LblTitulo.Location = new Point(264, 9);
             LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(215, 23);
+            LblTitulo.Size = new Size(201, 23);
             LblTitulo.TabIndex = 24;
-            LblTitulo.Text = "Compra de productos";
+            LblTitulo.Text = "Ventas de productos";
+            LblTitulo.Click += LblTitulo_Click;
             // 
-            // Compras
+            // Ventas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(769, 432);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Compras";
+            Name = "Ventas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Compras";
-            Load += Compras_Load;
+            Text = "Ventas";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
@@ -231,16 +184,12 @@
         private Panel panel1;
         private Button btnComprar;
         private DataGridView dgvProductos;
-        private ComboBox cbProveedores;
         private NumericUpDown nudCantidad;
-        private Label lblPrecio;
-        private TextBox txtPrecio;
         private Label LblCantidad;
-        private Label LblProveedor;
         private Label LblNombre;
-        private TextBox txtNombre;
         private Panel panel2;
         private Button btnInicio;
         private Label LblTitulo;
+        private ComboBox comboBox1;
     }
 }
