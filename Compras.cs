@@ -16,23 +16,13 @@ namespace modulo_inventario
         public Compras()
         {
             InitializeComponent();
-            btnSalir.MouseEnter += btnSalir_MouseEnter;
-            btnSalir.MouseLeave += btnSalir_MouseLeave;
+
             btnInicio.MouseEnter += btnInicio_MouseEnter;
             btnInicio.MouseLeave += btnInicio_MouseLeave;
             btnComprar.MouseEnter += btnComprar_MouseEnter;
             btnComprar.MouseLeave += btnComprar_MouseLeave;
         }
-        private void btnSalir_MouseEnter(object sender, EventArgs e)
-        {
-            btnSalir.BackColor = Color.FromArgb(173, 216, 230); // LightBlue en RGB
-        }
 
-        // Evento para cuando el cursor sale del botón Comprar
-        private void btnSalir_MouseLeave(object sender, EventArgs e)
-        {
-            btnSalir.BackColor = Color.FromArgb(60, 100, 220);
-        }
         private void btnInicio_MouseEnter(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(173, 216, 230); // LightBlue en RGB
