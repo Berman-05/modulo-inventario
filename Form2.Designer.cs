@@ -49,7 +49,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(727, 450);
+            panel1.Size = new Size(769, 432);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -85,7 +85,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(727, 45);
+            panel2.Size = new Size(769, 45);
             panel2.TabIndex = 29;
             // 
             // LblTitulo
@@ -103,10 +103,11 @@
             btnInicio.Dock = DockStyle.Left;
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.Location = new Point(0, 0);
             btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(83, 45);
+            btnInicio.Size = new Size(57, 45);
             btnInicio.TabIndex = 5;
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -117,11 +118,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(727, 450);
+            ClientSize = new Size(769, 432);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
