@@ -8,7 +8,7 @@ namespace modulo_inventario
 {
     internal class Inventario
     {
-        public List<Productos> listaProductos { get; private set; } = new List<Productos>();
+        public static List<Productos> listaProductos { get; private set; } = new List<Productos>();
 
         public void AgregarProducto(Productos producto)
         {
