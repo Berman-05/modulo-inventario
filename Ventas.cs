@@ -22,7 +22,7 @@ namespace modulo_inventario
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-           
+
             dgvProductos.ColumnCount = 4;
             dgvProductos.Columns[0].Name = "Nombre";
             dgvProductos.Columns[1].Name = "proveedor";
@@ -45,7 +45,7 @@ namespace modulo_inventario
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-           
+
 
             DialogResult result = MessageBox.Show("¿Desea realizar el pago con tarjeta?\nSeleccione una opción:",
                                                               "Método de Pago",
@@ -65,7 +65,7 @@ namespace modulo_inventario
                 MessageBox.Show("Ha seleccionado pagar en efectivo.\n¡Compra realizada!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-       
+
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvProductos.Columns.Add("NombreProducto", "Nombre del Producto");
@@ -108,16 +108,21 @@ namespace modulo_inventario
             else { MessageBox.Show("Sin existencias."); }
 
         }
-            void CargarProductos()
+        void CargarProductos()
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(nudCantidad.Text))
             {
-                if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(nudCantidad.Text))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                MessageBox.Show("Por favor, complete todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-           
 
-             }
+
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

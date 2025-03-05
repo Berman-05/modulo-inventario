@@ -43,15 +43,7 @@ namespace modulo_inventario
         {
             btnInicio.BackColor = Color.Gold;
         }
-        //private void CargarInventario()
-        //{
-        //    Inventario.Add(new Productos("Producto A", "Proveedor 1", 100.00m, 10));
-        //    Inventario.Add(new Productos("Producto B", "Proveedor 2", 150.00m, 20));
-        //    Inventario.Add(new Productos("Producto C", "Proveedor 3", 200.00m, 30));
 
-        //    // Mostrar en el DataGridView
-        //    dgvProductos.DataSource = Inventario;
-        //}
         private void btnComprar_Click(object sender, EventArgs e)
         {
             string nombreProducto = txtNombre.Text; // TextBox para el nombre del producto
@@ -119,6 +111,11 @@ namespace modulo_inventario
         private void btnInicio_Click_1(object sender, EventArgs e)
         {
             ChangeMenu(new Menú());
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
