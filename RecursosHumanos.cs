@@ -197,7 +197,8 @@ namespace modulo_inventario
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-
+  
+            
         }
 
         private void btnCambiarSalario_Click(object sender, EventArgs e)
