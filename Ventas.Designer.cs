@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            txtCodigo = new TextBox();
             button1 = new Button();
             btnComprar = new Button();
             dgvProductos = new DataGridView();
             nudCantidad = new NumericUpDown();
             LblCantidad = new Label();
-            LblNombre = new Label();
+            lblCodigo = new Label();
             panel2 = new Panel();
             btnInicio = new Button();
             LblTitulo = new Label();
@@ -47,13 +47,13 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtCodigo);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnComprar);
             panel1.Controls.Add(dgvProductos);
             panel1.Controls.Add(nudCantidad);
             panel1.Controls.Add(LblCantidad);
-            panel1.Controls.Add(LblNombre);
+            panel1.Controls.Add(lblCodigo);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -62,17 +62,17 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            textBox1.Location = new Point(194, 104);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(183, 23);
-            textBox1.TabIndex = 53;
+            txtCodigo.Location = new Point(194, 104);
+            txtCodigo.Margin = new Padding(3, 2, 3, 2);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(183, 23);
+            txtCodigo.TabIndex = 53;
             // 
             // button1
             // 
-            button1.Location = new Point(647, 128);
+            button1.Location = new Point(647, 139);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(82, 22);
@@ -125,15 +125,15 @@
             LblCantidad.TabIndex = 45;
             LblCantidad.Text = "Cantidad";
             // 
-            // LblNombre
+            // lblCodigo
             // 
-            LblNombre.AutoSize = true;
-            LblNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblNombre.Location = new Point(42, 104);
-            LblNombre.Name = "LblNombre";
-            LblNombre.Size = new Size(137, 17);
-            LblNombre.TabIndex = 42;
-            LblNombre.Text = "Nombre del producto";
+            lblCodigo.AutoSize = true;
+            lblCodigo.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCodigo.Location = new Point(42, 104);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new Size(52, 17);
+            lblCodigo.TabIndex = 42;
+            lblCodigo.Text = "Código";
             // 
             // panel2
             // 
@@ -201,11 +201,11 @@
         private DataGridView dgvProductos;
         private NumericUpDown nudCantidad;
         private Label LblCantidad;
-        private Label LblNombre;
+        private Label lblCodigo;
         private Panel panel2;
         private Button btnInicio;
         private Label LblTitulo;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox txtCodigo;
     }
 }

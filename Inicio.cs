@@ -19,19 +19,19 @@ namespace modulo_inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-                string user = userBox.Text;
-                string password = passwordBox.Text;
-                if (user == "Usuario1" && password == "123")
-                {
-                    MessageBox.Show("Sesión iniciada.     ");
-                    ChangeMenu(new Menú());
-                }
-                else
-                {
-                    MessageBox.Show("Credenciales incorrectas");
-                }
-            
+
+            string user = userBox.Text;
+            string password = passwordBox.Text;
+            if (user == "Usuario1" && password == "123")
+            {
+                MessageBox.Show("Sesión iniciada.     ");
+                ChangeMenu(new Menú());
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas");
+            }
+
         }
         public void ChangeMenu(object menu)
         {
@@ -45,6 +45,11 @@ namespace modulo_inventario
             this.panel1.Controls.Add(display);
             this.panel1.Tag = display;
             display.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
