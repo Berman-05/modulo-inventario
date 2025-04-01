@@ -66,6 +66,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(769, 432);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint_1;
             // 
             // btnComprar
             // 
@@ -84,11 +85,12 @@
             // 
             // dgvProductos
             // 
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Location = new Point(72, 187);
             dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
             dgvProductos.Size = new Size(609, 154);
             dgvProductos.TabIndex = 38;
             // 
@@ -113,7 +115,7 @@
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPrecio.Location = new Point(351, 129);
-            lblPrecio.Margin = new Padding(3);
+            lblPrecio.Margin = new Padding(3, 3, 3, 3);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(95, 17);
             lblPrecio.TabIndex = 35;
@@ -143,7 +145,7 @@
             LblProveedor.AutoSize = true;
             LblProveedor.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LblProveedor.Location = new Point(375, 96);
-            LblProveedor.Margin = new Padding(3);
+            LblProveedor.Margin = new Padding(3, 3, 3, 3);
             LblProveedor.Name = "LblProveedor";
             LblProveedor.Size = new Size(71, 17);
             LblProveedor.TabIndex = 32;
@@ -153,7 +155,7 @@
             // 
             LblNombre.AutoSize = true;
             LblNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblNombre.Location = new Point(36, 96);
+            LblNombre.Location = new Point(29, 97);
             LblNombre.Name = "LblNombre";
             LblNombre.Size = new Size(137, 17);
             LblNombre.TabIndex = 31;

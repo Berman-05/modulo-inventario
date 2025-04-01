@@ -12,7 +12,7 @@ namespace modulo_inventario
 {
     public partial class Compras : Form
     {
-        private List<Productos> Inventario = new List<Productos>();
+        public static List<Productos> existencias = new List<Productos>();
         public Compras()
         {
             InitializeComponent();
@@ -43,15 +43,7 @@ namespace modulo_inventario
         {
             btnInicio.BackColor = Color.Gold;
         }
-        //private void CargarInventario()
-        //{
-        //    Inventario.Add(new Productos("Producto A", "Proveedor 1", 100.00m, 10));
-        //    Inventario.Add(new Productos("Producto B", "Proveedor 2", 150.00m, 20));
-        //    Inventario.Add(new Productos("Producto C", "Proveedor 3", 200.00m, 30));
 
-        //    // Mostrar en el DataGridView
-        //    dgvProductos.DataSource = Inventario;
-        //}
         private void btnComprar_Click(object sender, EventArgs e)
         {
             string nombreProducto = txtNombre.Text; // TextBox para el nombre del producto
@@ -60,7 +52,7 @@ namespace modulo_inventario
             decimal precio = decimal.Parse(txtPrecio.Text); // Precio del producto
 
             // Verificar si ya existe el producto en el inventario
-            Productos productoExistente = Inventario.FirstOrDefault(p => p.Nombre == nombreProducto);
+            Productos productoExistente = existencias.FirstOrDefault(p => p.Nombre == nombreProducto);
 
             if (productoExistente != null)
             {
@@ -71,7 +63,7 @@ namespace modulo_inventario
             {
                 // Si el producto no existe, agregarlo al inventario con el precio
                 Productos nuevoProducto = new Productos(nombreProducto, proveedor, precio, cantidadComprada);
-                Inventario.Add(nuevoProducto);
+                existencias.Add(nuevoProducto);
             }
 
             // Agregar el producto a la lista de compras realizadas (con el precio correcto)
@@ -79,7 +71,7 @@ namespace modulo_inventario
 
             // Actualizar el DataGridView con la lista de productos actualizada
             dgvProductos.DataSource = null;
-            dgvProductos.DataSource = Inventario;
+            dgvProductos.DataSource = existencias;
 
             MessageBox.Show("Compra realizada con éxito");
         }
@@ -119,6 +111,11 @@ namespace modulo_inventario
         private void btnInicio_Click_1(object sender, EventArgs e)
         {
             ChangeMenu(new Menú());
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

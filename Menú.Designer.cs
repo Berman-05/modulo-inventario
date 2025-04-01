@@ -57,13 +57,14 @@
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             btnVentas.Location = new Point(566, 104);
-            btnVentas.Margin = new Padding(15);
+            btnVentas.Margin = new Padding(15, 15, 15, 15);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(125, 125);
             btnVentas.TabIndex = 4;
             btnVentas.Text = "Ventas";
             btnVentas.TextImageRelation = TextImageRelation.ImageAboveText;
             btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnRH
             // 
@@ -72,13 +73,14 @@
             btnRH.FlatStyle = FlatStyle.Flat;
             btnRH.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             btnRH.Location = new Point(411, 104);
-            btnRH.Margin = new Padding(15);
+            btnRH.Margin = new Padding(15, 15, 15, 15);
             btnRH.Name = "btnRH";
             btnRH.Size = new Size(125, 125);
             btnRH.TabIndex = 2;
             btnRH.Text = "Recursos Humanos";
             btnRH.TextImageRelation = TextImageRelation.ImageAboveText;
             btnRH.UseVisualStyleBackColor = false;
+            btnRH.Click += btnRH_Click;
             // 
             // btnCompras
             // 
@@ -87,7 +89,7 @@
             btnCompras.FlatStyle = FlatStyle.Flat;
             btnCompras.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             btnCompras.Location = new Point(257, 104);
-            btnCompras.Margin = new Padding(15);
+            btnCompras.Margin = new Padding(15, 15, 15, 15);
             btnCompras.Name = "btnCompras";
             btnCompras.Size = new Size(125, 125);
             btnCompras.TabIndex = 1;
@@ -103,7 +105,7 @@
             btnInventario.FlatStyle = FlatStyle.Flat;
             btnInventario.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             btnInventario.Location = new Point(102, 104);
-            btnInventario.Margin = new Padding(15);
+            btnInventario.Margin = new Padding(15, 15, 15, 15);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(125, 125);
             btnInventario.TabIndex = 0;

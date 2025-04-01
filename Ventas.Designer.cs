@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
             btnComprar = new Button();
             dgvProductos = new DataGridView();
             nudCantidad = new NumericUpDown();
@@ -46,7 +47,8 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btnComprar);
             panel1.Controls.Add(dgvProductos);
             panel1.Controls.Add(nudCantidad);
@@ -58,16 +60,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(769, 432);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
-            // comboBox1
+            // textBox1
             // 
-            comboBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Pollo Rey", "Pierna de pollo", "Medallones", "Alas de pollo", "Toledo", "Xelac" });
-            comboBox1.Location = new Point(184, 100);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(234, 25);
-            comboBox1.TabIndex = 51;
+            textBox1.Location = new Point(194, 104);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(183, 23);
+            textBox1.TabIndex = 53;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(647, 128);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(82, 22);
+            button1.TabIndex = 52;
+            button1.Text = "Añadir";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // btnComprar
             // 
@@ -86,11 +98,12 @@
             // 
             // dgvProductos
             // 
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Location = new Point(36, 198);
             dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
             dgvProductos.Size = new Size(693, 154);
             dgvProductos.TabIndex = 49;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;
@@ -148,6 +161,7 @@
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // LblTitulo
             // 
@@ -170,6 +184,7 @@
             Name = "Ventas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";
+            Load += Ventas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
@@ -190,6 +205,7 @@
         private Panel panel2;
         private Button btnInicio;
         private Label LblTitulo;
-        private ComboBox comboBox1;
+        private Button button1;
+        private TextBox textBox1;
     }
 }

@@ -44,5 +44,15 @@ namespace modulo_inventario
         {
             ChangeMenu(new Compras());
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            ChangeMenu(new Ventas());
+        }
+
+        private void btnRH_Click(object sender, EventArgs e)
+        {
+            ChangeMenu(new RecursosHumanos());
+        }
     }
 }
