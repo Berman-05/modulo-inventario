@@ -23,11 +23,12 @@ namespace modulo_inventario
         private void Ventas_Load(object sender, EventArgs e)
         {
 
-            dgvProductos.ColumnCount = 4;
-            dgvProductos.Columns[0].Name = "Nombre";
-            dgvProductos.Columns[1].Name = "proveedor";
-            dgvProductos.Columns[2].Name = "Cantidad";
-            dgvProductos.Columns[3].Name = "precio";
+            dgvProductos.ColumnCount = 5;
+            dgvProductos.Columns[0].Name = "Codigo";
+            dgvProductos.Columns[1].Name = "Nombre";
+            dgvProductos.Columns[2].Name = "Proveedor";
+            dgvProductos.Columns[3].Name = "Cantidad";
+            dgvProductos.Columns[4].Name = "Precio";
 
 
         }
@@ -68,6 +69,7 @@ namespace modulo_inventario
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dgvProductos.Columns.Add("Codigo", "Codigo");
             dgvProductos.Columns.Add("NombreProducto", "Nombre del Producto");
             dgvProductos.Columns.Add("Cantidad", "Cantidad");
             dgvProductos.Columns.Add("Precio", "Precio");
@@ -95,14 +97,14 @@ namespace modulo_inventario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nombre = textBox1.Text;
-            Productos buscar = Compras.existencias.Find(p => p.Nombre == nombre);
+            int codigo = int.Parse(txtCodigo.Text);
+            Productos buscar = Compras.existencias.Find(p => p.Codigo == codigo);
             if (buscar != null)
             {
                 CargarProductos();
-                dgvProductos.Rows.Add(textBox1.Text, buscar.Proveedor, nudCantidad.Text, buscar.Precio); // Agregar fila
-                textBox1.Clear();
-                textBox1.Clear();
+                dgvProductos.Rows.Add(txtCodigo.Text, buscar.Nombre, buscar.Proveedor, nudCantidad.Text, buscar.PrecioVenta); // Agregar fila
+                txtCodigo.Clear();
+                txtCodigo.Clear();
                 MessageBox.Show("añadido al pedido.");
             }
             else { MessageBox.Show("Sin existencias."); }
@@ -110,7 +112,7 @@ namespace modulo_inventario
         }
         void CargarProductos()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(nudCantidad.Text))
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) || string.IsNullOrWhiteSpace(nudCantidad.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

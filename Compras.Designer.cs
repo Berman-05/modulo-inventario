@@ -42,6 +42,8 @@
             panel2 = new Panel();
             btnInicio = new Button();
             LblTitulo = new Label();
+            lblCodigo = new Label();
+            txtCodigo = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
@@ -50,6 +52,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblCodigo);
+            panel1.Controls.Add(txtCodigo);
             panel1.Controls.Add(btnComprar);
             panel1.Controls.Add(dgvProductos);
             panel1.Controls.Add(cbProveedores);
@@ -105,7 +109,7 @@
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(178, 129);
+            nudCantidad.Location = new Point(321, 128);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(87, 23);
             nudCantidad.TabIndex = 36;
@@ -114,8 +118,8 @@
             // 
             lblPrecio.AutoSize = true;
             lblPrecio.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(351, 129);
-            lblPrecio.Margin = new Padding(3, 3, 3, 3);
+            lblPrecio.Location = new Point(426, 132);
+            lblPrecio.Margin = new Padding(3);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(95, 17);
             lblPrecio.TabIndex = 35;
@@ -125,16 +129,16 @@
             // 
             txtPrecio.BackColor = Color.White;
             txtPrecio.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPrecio.Location = new Point(452, 129);
+            txtPrecio.Location = new Point(527, 129);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(164, 22);
+            txtPrecio.Size = new Size(89, 22);
             txtPrecio.TabIndex = 33;
             // 
             // LblCantidad
             // 
             LblCantidad.AutoSize = true;
             LblCantidad.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblCantidad.Location = new Point(108, 130);
+            LblCantidad.Location = new Point(251, 132);
             LblCantidad.Name = "LblCantidad";
             LblCantidad.Size = new Size(64, 17);
             LblCantidad.TabIndex = 34;
@@ -145,7 +149,7 @@
             LblProveedor.AutoSize = true;
             LblProveedor.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LblProveedor.Location = new Point(375, 96);
-            LblProveedor.Margin = new Padding(3, 3, 3, 3);
+            LblProveedor.Margin = new Padding(3);
             LblProveedor.Name = "LblProveedor";
             LblProveedor.Size = new Size(71, 17);
             LblProveedor.TabIndex = 32;
@@ -155,17 +159,17 @@
             // 
             LblNombre.AutoSize = true;
             LblNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblNombre.Location = new Point(29, 97);
+            LblNombre.Location = new Point(88, 98);
             LblNombre.Name = "LblNombre";
-            LblNombre.Size = new Size(137, 17);
+            LblNombre.Size = new Size(63, 17);
             LblNombre.TabIndex = 31;
-            LblNombre.Text = "Nombre del producto";
+            LblNombre.Text = "Producto";
             // 
             // txtNombre
             // 
             txtNombre.BackColor = Color.White;
             txtNombre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(178, 95);
+            txtNombre.Location = new Point(170, 95);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(164, 22);
             txtNombre.TabIndex = 30;
@@ -208,6 +212,25 @@
             LblTitulo.TabIndex = 24;
             LblTitulo.Text = "Compra de productos";
             // 
+            // lblCodigo
+            // 
+            lblCodigo.AutoSize = true;
+            lblCodigo.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCodigo.Location = new Point(88, 132);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new Size(52, 17);
+            lblCodigo.TabIndex = 41;
+            lblCodigo.Text = "Código";
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.BackColor = Color.White;
+            txtCodigo.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCodigo.Location = new Point(146, 128);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(99, 22);
+            txtCodigo.TabIndex = 40;
+            // 
             // Compras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,5 +267,7 @@
         private Panel panel2;
         private Button btnInicio;
         private Label LblTitulo;
+        private Label lblCodigo;
+        private TextBox txtCodigo;
     }
 }
