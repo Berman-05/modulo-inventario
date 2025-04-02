@@ -57,25 +57,24 @@
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(769, 432);
+            panel1.Size = new Size(879, 576);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(194, 104);
-            txtCodigo.Margin = new Padding(3, 2, 3, 2);
+            txtCodigo.Location = new Point(222, 139);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(183, 23);
+            txtCodigo.Size = new Size(209, 27);
             txtCodigo.TabIndex = 53;
             // 
             // button1
             // 
-            button1.Location = new Point(647, 139);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(739, 185);
             button1.Name = "button1";
-            button1.Size = new Size(82, 22);
+            button1.Size = new Size(94, 29);
             button1.TabIndex = 52;
             button1.Text = "Añadir";
             button1.UseVisualStyleBackColor = true;
@@ -88,9 +87,10 @@
             btnComprar.FlatAppearance.BorderSize = 0;
             btnComprar.FlatStyle = FlatStyle.Flat;
             btnComprar.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnComprar.Location = new Point(36, 166);
+            btnComprar.Location = new Point(41, 221);
+            btnComprar.Margin = new Padding(3, 4, 3, 4);
             btnComprar.Name = "btnComprar";
-            btnComprar.Size = new Size(693, 26);
+            btnComprar.Size = new Size(792, 35);
             btnComprar.TabIndex = 50;
             btnComprar.Text = "Ventas";
             btnComprar.UseVisualStyleBackColor = false;
@@ -101,37 +101,40 @@
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(36, 198);
+            dgvProductos.Location = new Point(41, 264);
+            dgvProductos.Margin = new Padding(3, 4, 3, 4);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
-            dgvProductos.Size = new Size(693, 154);
+            dgvProductos.Size = new Size(792, 205);
             dgvProductos.TabIndex = 49;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(513, 102);
+            nudCantidad.Location = new Point(586, 136);
+            nudCantidad.Margin = new Padding(3, 4, 3, 4);
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(216, 23);
+            nudCantidad.Size = new Size(247, 27);
             nudCantidad.TabIndex = 47;
             // 
             // LblCantidad
             // 
             LblCantidad.AutoSize = true;
             LblCantidad.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblCantidad.Location = new Point(443, 103);
+            LblCantidad.Location = new Point(502, 138);
             LblCantidad.Name = "LblCantidad";
-            LblCantidad.Size = new Size(64, 17);
+            LblCantidad.Size = new Size(78, 20);
             LblCantidad.TabIndex = 45;
             LblCantidad.Text = "Cantidad";
+            LblCantidad.Click += LblCantidad_Click;
             // 
             // lblCodigo
             // 
             lblCodigo.AutoSize = true;
             lblCodigo.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCodigo.Location = new Point(42, 104);
+            lblCodigo.Location = new Point(48, 139);
             lblCodigo.Name = "lblCodigo";
-            lblCodigo.Size = new Size(52, 17);
+            lblCodigo.Size = new Size(64, 20);
             lblCodigo.TabIndex = 42;
             lblCodigo.Text = "Código";
             // 
@@ -143,8 +146,9 @@
             panel2.Controls.Add(LblTitulo);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(769, 45);
+            panel2.Size = new Size(879, 60);
             panel2.TabIndex = 40;
             // 
             // btnInicio
@@ -154,9 +158,8 @@
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Location = new Point(0, 0);
-            btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(83, 45);
+            btnInicio.Size = new Size(95, 60);
             btnInicio.TabIndex = 5;
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -167,20 +170,21 @@
             // 
             LblTitulo.AutoSize = true;
             LblTitulo.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblTitulo.Location = new Point(264, 9);
+            LblTitulo.Location = new Point(302, 12);
             LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(201, 23);
+            LblTitulo.Size = new Size(244, 27);
             LblTitulo.TabIndex = 24;
             LblTitulo.Text = "Ventas de productos";
             LblTitulo.Click += LblTitulo_Click;
             // 
             // Ventas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(769, 432);
+            ClientSize = new Size(879, 576);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Ventas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";

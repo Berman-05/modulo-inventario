@@ -57,6 +57,7 @@ namespace modulo_inventario
             // Evaluamos la opción seleccionada
             if (result == DialogResult.Yes)
             {
+
                 // Opción de pago con tarjeta
                 MessageBox.Show("Ha seleccionado pagar con tarjeta.\n¡Compra realizada!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -101,10 +102,14 @@ namespace modulo_inventario
             Productos buscar = Compras.existencias.Find(p => p.Codigo == codigo);
             if (buscar != null)
             {
+                buscar.Cantidad -= int.Parse(nudCantidad.Text);
                 CargarProductos();
                 dgvProductos.Rows.Add(txtCodigo.Text, buscar.Nombre, buscar.Proveedor, nudCantidad.Text, buscar.PrecioVenta); // Agregar fila
                 txtCodigo.Clear();
                 txtCodigo.Clear();
+                Finanzas.dinero += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
+                Reporte.ganancias += buscar.PrecioVenta-((buscar.PrecioVenta/1.12m*0.17m)) *int.Parse(nudCantidad.Text);
+                Reporte.ingresos.Add(buscar);
                 MessageBox.Show("añadido al pedido.");
             }
             else { MessageBox.Show("Sin existencias."); }
@@ -123,6 +128,11 @@ namespace modulo_inventario
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LblCantidad_Click(object sender, EventArgs e)
         {
 
         }

@@ -198,9 +198,21 @@ namespace modulo_inventario
         private void btnInicio_Click(object sender, EventArgs e)
         {
   
-            
+            ChangeMenu(new Menú());
         }
-
+        public void ChangeMenu(object menu)
+        {
+            if (this.panel1.Controls.Count > 0)
+            {
+                this.panel1.Controls.Clear();
+            }
+            Form display = menu as Form;
+            display.TopLevel = false;
+            display.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(display);
+            this.panel1.Tag = display;
+            display.Show();
+        }
         private void btnCambiarSalario_Click(object sender, EventArgs e)
         {
             if (dgvEmpleados.SelectedRows.Count > 0)
