@@ -20,7 +20,7 @@ namespace modulo_inventario
         decimal mostrarDinero = Finanzas.dinero;
         private void Estado_cuenta_Load(object sender, EventArgs e)
         {
-            textBox1.Text = mostrarDinero.ToString();
+            textBox1.Text = mostrarDinero.ToString("F2");
         }
 
         private void button1_Click(object sender, EventArgs e)

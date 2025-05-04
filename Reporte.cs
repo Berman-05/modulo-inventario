@@ -20,12 +20,12 @@ namespace modulo_inventario
             Cargaringresos();
         }
 
-        decimal mostrarDinero = Finanzas.dinero;
+
         public static decimal ganancias = 0;
         private void Estado_cuenta_Load(object sender, EventArgs e)
         {
-            textBox1.Text = mostrarDinero.ToString();
-            textBox2.Text = (ganancias-((ganancias/1.12m)*0.17m)).ToString("F2");
+            textBox1.Text = Ventas.neto.ToString("F2");
+            textBox2.Text = ganancias.ToString("F2");
         }
         public static List<Productos> ingresos = new List<Productos>();
         public void ChangeMenu(object menu)

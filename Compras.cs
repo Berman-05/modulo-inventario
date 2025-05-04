@@ -63,6 +63,7 @@ namespace modulo_inventario
                 if (codigoExistente.Codigo == codigo)
                 {
                     productoExistente.Cantidad += cantidadComprada;
+                    Finanzas.dinero =Finanzas.dinero- (precio *= cantidadComprada); // Restar el dinero del inventario
                 }
                 else
                 {

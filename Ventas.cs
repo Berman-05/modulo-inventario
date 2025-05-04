@@ -95,7 +95,8 @@ namespace modulo_inventario
             this.panel1.Tag = display;
             display.Show();
         }
-
+        public static decimal transaccion = 0;
+        public static decimal neto = 0;
         private void button1_Click(object sender, EventArgs e)
         {
             int codigo = int.Parse(txtCodigo.Text);
@@ -107,9 +108,11 @@ namespace modulo_inventario
                 dgvProductos.Rows.Add(txtCodigo.Text, buscar.Nombre, buscar.Proveedor, nudCantidad.Text, buscar.PrecioVenta); // Agregar fila
                 txtCodigo.Clear();
                 txtCodigo.Clear();
-                Finanzas.dinero += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
-                Reporte.ganancias += buscar.PrecioVenta-((buscar.PrecioVenta/1.12m*0.17m)) *int.Parse(nudCantidad.Text);
+                transaccion += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
+                Finanzas.dinero +=transaccion-((transaccion / 1.12m * 0.17m)) ;
+                Reporte.ganancias += transaccion - ((transaccion / 1.12m * 0.17m));
                 Reporte.ingresos.Add(buscar);
+                neto += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
                 MessageBox.Show("añadido al pedido.");
             }
             else { MessageBox.Show("Sin existencias."); }
