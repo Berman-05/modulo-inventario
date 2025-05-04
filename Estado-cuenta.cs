@@ -10,16 +10,24 @@ using System.Windows.Forms;
 
 namespace modulo_inventario
 {
-    public partial class Menú : Form
+    public partial class Estado_cuenta : Form
     {
-        public Menú()
+        public Estado_cuenta()
         {
             InitializeComponent();
+            Estado_cuenta_Load(null, null);
+        }
+        decimal mostrarDinero = Finanzas.dinero;
+        private void Estado_cuenta_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = mostrarDinero.ToString("F2");
         }
 
-        private void Inventario_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ChangeMenu(new Form2());
+            decimal deposito = decimal.Parse(textBox2.Text);
+            Finanzas.dinero += deposito;
+            textBox1.Text = Finanzas.dinero.ToString("F2");
         }
         public void ChangeMenu(object menu)
         {
@@ -34,27 +42,6 @@ namespace modulo_inventario
             this.panel1.Tag = display;
             display.Show();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Inicio());
-        }
-
-        private void btnCompras_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Compras());
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Ventas());
-        }
-
-        private void btnRH_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new RecursosHumanos());
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ChangeMenu(new Finanzas());

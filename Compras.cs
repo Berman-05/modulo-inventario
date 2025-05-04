@@ -50,24 +50,36 @@ namespace modulo_inventario
             string proveedor = cbProveedores.SelectedItem.ToString(); // ComboBox para el proveedor
             int cantidadComprada = (int)nudCantidad.Value; // NumericUpDown para la cantidad
             decimal precio = decimal.Parse(txtPrecio.Text); // Precio del producto
+            decimal precioVenta = precio + (precio * 0.5m); // Precio de venta del producto
+            int codigo = int.Parse(txtCodigo.Text); // Código del producto
 
             // Verificar si ya existe el producto en el inventario
             Productos productoExistente = existencias.FirstOrDefault(p => p.Nombre == nombreProducto);
+            Productos codigoExistente = existencias.FirstOrDefault(p => p.Codigo == codigo);
 
-            if (productoExistente != null)
+            if (codigoExistente != null && productoExistente != null)
             {
                 // Si el producto existe, actualizar la cantidad y el precio
-                productoExistente.Cantidad += cantidadComprada;
+                if (codigoExistente.Codigo == codigo)
+                {
+                    productoExistente.Cantidad += cantidadComprada;
+                    Finanzas.dinero =Finanzas.dinero- (precio *= cantidadComprada); // Restar el dinero del inventario
+                }
+                else
+                {
+                    MessageBox.Show("El producto ya existe en el inventario");
+                }
+
             }
-            else
+            else if (codigoExistente == null)
             {
                 // Si el producto no existe, agregarlo al inventario con el precio
-                Productos nuevoProducto = new Productos(nombreProducto, proveedor, precio, cantidadComprada);
+                Productos nuevoProducto = new Productos(codigo, nombreProducto, proveedor, precio, precioVenta, cantidadComprada);
                 existencias.Add(nuevoProducto);
             }
 
             // Agregar el producto a la lista de compras realizadas (con el precio correcto)
-            Productos.ComprasRealizadas.Add(new Productos(nombreProducto, proveedor, precio, cantidadComprada));
+            Productos.ComprasRealizadas.Add(new Productos(codigo, nombreProducto, proveedor, precio, precioVenta, cantidadComprada));
 
             // Actualizar el DataGridView con la lista de productos actualizada
             dgvProductos.DataSource = null;
@@ -114,6 +126,11 @@ namespace modulo_inventario
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblPrecio_Click(object sender, EventArgs e)
         {
 
         }

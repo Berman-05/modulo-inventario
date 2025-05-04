@@ -23,8 +23,9 @@ namespace modulo_inventario
         {
             // Asignar la lista de productos comprados al DataGridView
             dgvInventario.DataSource = null;
-            dgvInventario.DataSource = Productos.ComprasRealizadas;
+            dgvInventario.DataSource = Compras.existencias;
         }
+
         public void ChangeMenu(object menu)
         {
             if (this.panel1.Controls.Count > 0)
@@ -75,6 +76,11 @@ namespace modulo_inventario
         }
 
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
 
         }
