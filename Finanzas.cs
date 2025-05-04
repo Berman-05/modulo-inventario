@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace modulo_inventario
 {
-    public partial class Menú : Form
+    public partial class Finanzas : Form
     {
-        public Menú()
+        public Finanzas()
         {
             InitializeComponent();
         }
 
-        private void Inventario_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Form2());
-        }
+        public static decimal dinero = 0;
         public void ChangeMenu(object menu)
         {
             if (this.panel1.Controls.Count > 0)
@@ -35,29 +32,19 @@ namespace modulo_inventario
             display.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Inicio());
-        }
-
-        private void btnCompras_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Compras());
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new Ventas());
-        }
-
-        private void btnRH_Click(object sender, EventArgs e)
-        {
-            ChangeMenu(new RecursosHumanos());
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            ChangeMenu(new Finanzas());
+            ChangeMenu(new Estado_cuenta());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ChangeMenu(new Menú());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChangeMenu(new Reporte());  
         }
     }
 }
