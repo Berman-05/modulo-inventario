@@ -11,12 +11,12 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Font = iTextSharp.text.Font;
 using System.IO;
+using Microsoft.VisualBasic; // <-- Necesario para InputBox
 
 namespace modulo_inventario
 {
     public partial class Ventas : Form
     {
-
         public Ventas()
         {
             InitializeComponent();
@@ -24,12 +24,14 @@ namespace modulo_inventario
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            dgvProductos.ColumnCount = 5;
+            dgvProductos.ColumnCount = 7;
             dgvProductos.Columns[0].Name = "Codigo";
             dgvProductos.Columns[1].Name = "Nombre";
             dgvProductos.Columns[2].Name = "Proveedor";
             dgvProductos.Columns[3].Name = "Cantidad";
             dgvProductos.Columns[4].Name = "Precio";
+            dgvProductos.Columns[5].Name = "NIT";
+            dgvProductos.Columns[6].Name = "NombreCliente";
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
@@ -84,10 +86,10 @@ namespace modulo_inventario
                 Font normalFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
                 Font empresaFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 24);
 
-                // Agregar logo desde archivo
+                // Logo
                 try
                 {
-                    string logoPath = "C:\\Users\\monte\\Source\\Repos\\modulo-inventario\\logo.png"; // Ruta absoluta
+                    string logoPath = "C:\\Users\\monte\\Source\\Repos\\modulo-inventario\\logo.png";
                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoPath);
                     logo.ScaleToFit(100f, 100f);
                     logo.Alignment = Element.ALIGN_CENTER;
@@ -98,22 +100,17 @@ namespace modulo_inventario
                     MessageBox.Show("Error al agregar el logo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                // Información de la empresa
-                Paragraph empresa = new Paragraph("La Casa del Pollo", empresaFont)
-                {
-                    Alignment = Element.ALIGN_CENTER
-                };
+                // Empresa
+                Paragraph empresa = new Paragraph("La Casa del Pollo", empresaFont) { Alignment = Element.ALIGN_CENTER };
                 doc.Add(empresa);
 
-                Paragraph direccion = new Paragraph("12 ave. 7-17 zona 3 \nQuetzaltenango", normalFont)
-                {
-                    Alignment = Element.ALIGN_CENTER
-                };
+                Paragraph direccion = new Paragraph("12 ave. 7-17 zona 3 \nQuetzaltenango", normalFont) { Alignment = Element.ALIGN_CENTER };
                 doc.Add(direccion);
 
                 doc.Add(new Paragraph("Factura de Venta", tituloFont));
                 doc.Add(new Paragraph("\nFecha: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm") + "\n\n", normalFont));
 
+                // Cliente
                 string nitCliente = dgvProductos.Rows[0].Cells[5].Value?.ToString() ?? "N/A";
                 string nombreCliente = dgvProductos.Rows[0].Cells[6].Value?.ToString() ?? "N/A";
 
@@ -122,9 +119,10 @@ namespace modulo_inventario
                 doc.Add(new Paragraph("Nombre: " + nombreCliente, normalFont));
                 doc.Add(new Paragraph("\n"));
 
-                PdfPTable tabla = new PdfPTable(dgvProductos.ColumnCount - 2);
+                // Tabla productos
+                PdfPTable tabla = new PdfPTable(5); // Solo columnas de producto
 
-                for (int i = 0; i < dgvProductos.ColumnCount - 2; i++)
+                for (int i = 0; i <= 4; i++)
                 {
                     tabla.AddCell(new Phrase(dgvProductos.Columns[i].HeaderText, normalFont));
                 }
@@ -135,7 +133,7 @@ namespace modulo_inventario
                 {
                     if (!row.IsNewRow)
                     {
-                        for (int i = 0; i < dgvProductos.ColumnCount - 2; i++)
+                        for (int i = 0; i <= 4; i++)
                         {
                             tabla.AddCell(new Phrase(row.Cells[i].Value?.ToString() ?? "", normalFont));
                         }
@@ -152,14 +150,9 @@ namespace modulo_inventario
             }
         }
 
-        // Resto de tu código
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvProductos.Columns.Add("Codigo", "Codigo");
-            dgvProductos.Columns.Add("NombreProducto", "Nombre del Producto");
-            dgvProductos.Columns.Add("Cantidad", "Cantidad");
-            dgvProductos.Columns.Add("Precio", "Precio");
-            dgvProductos.Columns.Add("Total", "Total");
+            // Este evento no se necesita para columnas
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -192,7 +185,12 @@ namespace modulo_inventario
             {
                 buscar.Cantidad -= int.Parse(nudCantidad.Text);
                 CargarProductos();
-                dgvProductos.Rows.Add(txtCodigo.Text, buscar.Nombre, buscar.Proveedor, nudCantidad.Text, buscar.PrecioVenta); // Agregar fila
+
+                string nitCliente = Interaction.InputBox("Ingrese el NIT del cliente:", "NIT", "C/F");
+                string nombreCliente = Interaction.InputBox("Ingrese el nombre del cliente:", "Nombre", "Consumidor Final");
+
+                dgvProductos.Rows.Add(txtCodigo.Text, buscar.Nombre, buscar.Proveedor, nudCantidad.Text, buscar.PrecioVenta, nitCliente, nombreCliente);
+
                 txtCodigo.Clear();
                 transaccion += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
                 Finanzas.dinero += transaccion - ((transaccion / 1.12m * 0.17m));
@@ -201,7 +199,10 @@ namespace modulo_inventario
                 neto += buscar.PrecioVenta * int.Parse(nudCantidad.Text);
                 MessageBox.Show("añadido al pedido.");
             }
-            else { MessageBox.Show("Sin existencias."); }
+            else
+            {
+                MessageBox.Show("Sin existencias.");
+            }
         }
 
         void CargarProductos()
@@ -212,7 +213,5 @@ namespace modulo_inventario
                 return;
             }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
     }
 }
